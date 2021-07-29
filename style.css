@@ -4,7 +4,6 @@
   display: grid;
   grid-template-columns: repeat(var(--askSquares), 1fr);
   grid-template-rows: repeat(var(--askSquares), 1fr);
-  background-color: blue;
 }
 
 .square {

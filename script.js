@@ -1,8 +1,14 @@
+//Queda terminar el boton. De momento no vuelve los valores a 0.
+
+
 //Creates a button to start it all.
 let head = document.getElementById("head");
 let start = document.createElement("button");
 start.setAttribute("id", "button")
 start.textContent = "New Pad";
+start.addEventListener("click", () => {
+  askSquaresF();
+})
 head.appendChild(start);
 
 
