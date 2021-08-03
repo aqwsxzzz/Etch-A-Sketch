@@ -15,7 +15,6 @@ head.appendChild(start);
 //Make an input to get the users info bout how much squares it
 //want per side.
 function askSquaresF() {
-
   let askSquares = prompt("How much squres per side? Max = 50.");
   if (askSquares > 50) {
     alert("Max squares per side = 50");
@@ -26,7 +25,7 @@ function askSquaresF() {
 //function that removes square childs.
 function removeElementsByClass(square) {
   const elements = document.getElementsByClassName(square);
-  while(elements.length > 0){
+  while (elements.length > 0) {
     container.removeChild(elements[0]);
   }
 }
@@ -42,14 +41,16 @@ function createNewGrid(askSquares) {
     square.setAttribute("id", "square" + [i]);
     square.setAttribute("class", "square");
     square.addEventListener("mouseover", () =>
-      changeToPurpleColor("square" + [i])
+      changeToRandomColor("square" + [i])
     );
   }
 }
 
 //Change BG color of square to purple while mouse over it.
-function changeToPurpleColor(square) {
-  document.getElementById(square).style.backgroundColor = "purple";
+function changeToRandomColor(square) {
+  document.getElementById(
+    square
+  ).style.backgroundColor = `rgb(${createRandomNumber()}, ${createRandomNumber()}, ${createRandomNumber()})`;
   document.getElementById(square).style.border = "0.1px solid black";
 }
 //Change back BG color to white after mouse leave the square.
@@ -57,3 +58,11 @@ function changeToWhiteColor(square) {
   document.getElementById(square).style.backgroundColor = "white";
   document.getElementById(square).style.border = "0.1px solid black";
 }
+
+//Create a random number between 0 and 255.
+function createRandomNumber() {
+  return Math.floor(Math.random() * 256);
+  
+}
+createRandomNumber();
+console.log(createRandomNumber());
